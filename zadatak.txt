@@ -1,0 +1,101 @@
+You need to create simple mysql database “capeann” with one table “user”.
+
+“user” table should have 4 fields: id – primary key, First Name, Last Name, Comment as text field.
+
+Fields are self-explanatory .
+
+ 
+
+PHP CODE:
+
+You should also create object/class that is mapping “user” table. This means every field in table should be a property on “user” class.
+
+“user” class needs to have following method:
+
+-              Save method which will either insert or update records in “users” table
+
+-              Get method which will return one user
+
+-              GetList Method which will return array of user
+
+-              Delete Method which deletes user from database
+
+ 
+
+class User
+
+{
+
+ 
+
+    /// id cannot be changed.
+
+    private $id;
+
+   
+
+    public $first_name;
+
+    public $last_name;
+
+    public $comments;
+
+ 
+
+    /**
+
+     * @description Returns instance of the User object with data loaded from database for user with id $id.
+
+     */
+
+    public static function getUser($id){}
+
+ 
+
+    /**
+
+     * save data of this object into database. If $id is set to some value (id from data base)
+
+     * method update value, if $id is not set new data is added into database.
+
+     */
+
+    public function save(){}
+
+ 
+
+   /**
+
+     * @return Array of User
+
+     * @description Returns all users from database.
+
+     */
+
+    public static function getAllUsers(){}
+
+   
+
+    /**
+
+     * @description delete this user from database. if id is not set, nothing happens.
+
+     */
+
+    public function delete(){}
+
+}
+
+ 
+
+You need to create three php pages:
+
+add-user.php
+
+update-user.php
+
+list.php
+
+ 
+
+add-user.php should have html form that will allow inserting users in to database update-user.php should have the same form as add-user.php but this page should allow us to update user information list.php should be table based page which will list all users from database. Each row should have link to update-user.php for user in that row and delete user. This will be landing page page and should contain links to add user page .
